@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const box = document.querySelector(".box")
-    const inputs = document.querySelectorAll(".inputs input")
+    const inputs = document.querySelectorAll(".values")
     const btnCopy = document.querySelector("#btnCopy")
     const toast = document.querySelector("#toast")
     const select = document.querySelector("select")
