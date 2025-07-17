@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const arrayInput = Array.from(inputs)
 
     arrayInput.forEach(input => {
-        input.addEventListener("input", (event) => {
+        input.addEventListener("input", () => {
 
             const valorDosInputs = arrayInput.map(input => input.value || 0)
 
-            if (parseInt(select.value) !== 8) {
+            if (select.value === "4") {
 
                 box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px`
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnCopy.addEventListener("click", () => {
         let copyText
 
-        if (parseInt(select.value) !== 8) {
+        if (select.value === "4") {
             const [input1, input2, input3, input4] = arrayInput
 
             input1.value = input1.value || 0;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     select.addEventListener("change", () => {
-        if (parseInt(select.value) !== 8) {
+        if (select.value === "4") {
             visibilidadeDosUltimoInputs(arrayInput, "none")
         } else {
             visibilidadeDosUltimoInputs(arrayInput, "block")
