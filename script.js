@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         copiarTexto(text)
+        mostrarToast(toast)
     })
 
     select.addEventListener("change", () => {
@@ -69,11 +70,10 @@ function visibilidadeDosUltimoInputs(array, visibilidade) {
     }
 }
 
-function copiarTexto(text, toast) {
+function copiarTexto(text) {
     navigator.clipboard.writeText(text)
         .then(() => {
-            console.log("Copiado:", text);
-            mostrarToast(toast)
+            console.log("Copiado:", text)
         })
         .catch(err => {
             console.error("Erro ao copiar:", err);
