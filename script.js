@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
       arrayInput.forEach(input => {
         const valorDosInputs = arrayInput.map(input => input.value || 0)
   
-        if (parseInt(select.value) !== 8) {
+        if (arrayInput.length !== 8) {
   
           box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px`
   
