@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnCopy.addEventListener("click", () => {
       let copyText
   
-      if (parseInt(select.value) === 4) {
+      if (parseInt(select.value) !== 8) {
         const [input1, input2, input3, input4] = inputs
   
         input1.value = input1.value || 0;
@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   
     select.addEventListener("change", () => {
-      if (parseInt(select.value) === 8) {
-        visibilidadeDosUltimoInputs(arrayInput, "block")
-      } else {
+      if (parseInt(select.value) !== 8) {
         visibilidadeDosUltimoInputs(arrayInput, "none")
+      } else {
+        visibilidadeDosUltimoInputs(arrayInput, "block")
       }
     })
   })
