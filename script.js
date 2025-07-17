@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     select.addEventListener("change", () => {
         if (parseInt(select.value) !== 8) {
-            visibilidadeDosUltimoInputs(arrayInput, "block")
-        } else {
             visibilidadeDosUltimoInputs(arrayInput, "none")
+        } else {
+            visibilidadeDosUltimoInputs(arrayInput, "block")
         }
     })
 })
