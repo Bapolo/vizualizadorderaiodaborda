@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     const box = document.querySelector(".box")
-    const inputs = document.querySelectorAll("section input")
     const button = document.querySelector("button")
     const btnCopy = document.querySelector("#btnCopy")
     const toast = document.querySelector("#toast")
@@ -14,22 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const valorDosInputs = arrayInput.map(input => input.value || 0)
 
             if (parseInt(select.value) !== 8) {
-
-                box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px`
-
-            } else {
-
-                box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px / ${valorDosInputs[4]}px ${valorDosInputs[5]}px ${valorDosInputs[6]}px ${valorDosInputs[7]}px`
-
-            }
-        })
-    })
-
-    button.addEventListener("click", () => {
-        arrayInput.forEach(input => {
-            const valorDosInputs = arrayInput.map(input => input.value || 0)
-
-            if (arrayInput.length !== 8) {
 
                 box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px`
 
