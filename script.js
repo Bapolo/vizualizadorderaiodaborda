@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let copyText
 
         if (parseInt(select.value) !== 8) {
-            const [input1, input2, input3, input4] = inputs
+            const [input1, input2, input3, input4] = arrayInput
 
             input1.value = input1.value || 0;
             input2.value = input2.value || 0;
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             copyText = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px ;`
         } else {
-            const [input1, input2, input3, input4, input5, input6, input7, input8] = inputs
+            const [input1, input2, input3, input4, input5, input6, input7, input8] = arrayInput
 
             input1.value = input1.value || 0;
             input2.value = input2.value || 0;
