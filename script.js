@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const toast = document.querySelector("#toast")
     const select = document.querySelector("select")
 
-    const arrayInput = [...inputs]
+    const arrayInput = Array.from(inputs)
 
     arrayInput.forEach(input => {
         input.addEventListener("input", (event) => {
