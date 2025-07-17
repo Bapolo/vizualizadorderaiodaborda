@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
     })
-   
+  
     button.addEventListener("click", () => {
       arrayInput.forEach(input => {
         if (input.value !== "") {
@@ -52,10 +52,27 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   
     btnCopy.addEventListener("click", () => {
+      const [input1, input2, input3, input4] = inputs
+  
       toast.classList.add('active')
       setTimeout(() => {
         toast.classList.remove('active')
       }, 3000)
+  
+      input1.value = input1.value || 0;
+      input2.value = input2.value || 0;
+      input3.value = input3.value || 0;
+      input4.value = input4.value || 0;
+  
+      const copyText = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px ;`
+      
+      navigator.clipboard.writeText(copyText)
+        .then(() => {
+          console.log("Copiado:", copyText);
+        })
+        .catch(err => {
+          console.error("Erro ao copiar:", err);
+        });
     })
   })
   
