@@ -51,8 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             text = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px / ${input5.value}px ${input6.value}px ${input7.value}px ${input8.value}px ;`
         }
 
-        mostrarToast(toast)
-        copyText(text)
+        copiarTexto(text)
     })
 
     select.addEventListener("change", () => {
@@ -70,10 +69,11 @@ function visibilidadeDosUltimoInputs(array, visibilidade) {
     }
 }
 
-function copyText(text) {
+function copiarTexto(text, toast) {
     navigator.clipboard.writeText(text)
         .then(() => {
             console.log("Copiado:", text);
+            mostrarToast(toast)
         })
         .catch(err => {
             console.error("Erro ao copiar:", err);
