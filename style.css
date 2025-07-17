@@ -108,6 +108,20 @@
     transition: all .2s ease-in-out;
     animation: aparecerToast 3s;
   }
+
+  footer {
+    background-color: #5E936C;
+    padding: 1em;
+  }
+
+  footer p {
+    text-align: center;
+    color: #E8FFD7;
+  }
+  
+  footer p .fa-solid {
+    color: red;
+  }
   
   @keyframes aparecerToast {
     0% {
