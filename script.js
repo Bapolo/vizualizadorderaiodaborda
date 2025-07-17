@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.querySelector("button")
     const btnCopy = document.querySelector("#btnCopy")
     const toast = document.querySelector("#toast")
+    const select = document.querySelector("select")
   
     const arrayInput = [...inputs]
   
@@ -11,61 +12,68 @@ document.addEventListener("DOMContentLoaded", () => {
       input.addEventListener("input", (event) => {
         let configBorderRadius = event.target.value !== "e" ? event.target.value : "0"
   
-        if (temPropriedade(event.target, "id", "input1")) {
-          box.style.borderTopLeftRadius = parseInt(event.target.value) + "px"
-        }
+        const valorDosInputs = arrayInput.map(input => input.value || 0)
   
-        if (temPropriedade(event.target, "id", "input2")) {
-          box.style.borderTopRightRadius = parseInt(event.target.value) + "px"
-        }
+        if (parseInt(select.value) !== 8) {
   
-        if (temPropriedade(event.target, "id", "input3")) {
-          box.style.borderBottomRightRadius = parseInt(event.target.value) + "px"
-        }
+          box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px`
   
-        if (temPropriedade(event.target, "id", "input4")) {
-          box.style.borderBottomLeftRadius = parseInt(event.target.value) + "px"
+        } else {
+  
+          box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px / ${valorDosInputs[4]}px ${valorDosInputs[5]}px ${valorDosInputs[6]}px ${valorDosInputs[7]}px`
+  
         }
       })
     })
   
     button.addEventListener("click", () => {
       arrayInput.forEach(input => {
-        if (input.value !== "") {
-          if (temPropriedade(input, "id", "input1")) {
-            box.style.borderTopLeftRadius = parseInt(input.value) + "px"
-          }
+        const valorDosInputs = arrayInput.map(input => input.value || 0)
   
-          if (temPropriedade(input, "id", "input2")) {
-            box.style.borderTopRightRadius = parseInt(input.value) + "px"
-          }
+        if (parseInt(select.value) !== 8) {
   
-          if (temPropriedade(input, "id", "input3")) {
-            box.style.borderBottomRightRadius = parseInt(input.value) + "px"
-          }
+          box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px`
   
-          if (temPropriedade(input, "id", "input4")) {
-            box.style.borderBottomLeftRadius = parseInt(input.value) + "px"
-          }
+        } else {
+  
+          box.style.borderRadius = `${valorDosInputs[0]}px ${valorDosInputs[1]}px ${valorDosInputs[2]}px ${valorDosInputs[3]}px / ${valorDosInputs[4]}px ${valorDosInputs[5]}px ${valorDosInputs[6]}px ${valorDosInputs[7]}px`
+  
         }
       })
     })
   
     btnCopy.addEventListener("click", () => {
-      const [input1, input2, input3, input4] = inputs
+      let copyText
   
-      toast.classList.add('active')
+      if (parseInt(select.value) === 4) {
+        const [input1, input2, input3, input4] = inputs
+  
+        input1.value = input1.value || 0;
+        input2.value = input2.value || 0;
+        input3.value = input3.value || 0;
+        input4.value = input4.value || 0;
+  
+        copyText = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px ;`
+      } else {
+        const [input1, input2, input3, input4, input5, input6, input7, input8] = inputs
+  
+        input1.value = input1.value || 0;
+        input2.value = input2.value || 0;
+        input3.value = input3.value || 0;
+        input4.value = input4.value || 0;
+        input5.value = input5.value || 0;
+        input6.value = input6.value || 0;
+        input7.value = input7.value || 0;
+        input8.value = input8.value || 0;
+  
+        copyText = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px / ${input5.value}px ${input6.value}px ${input7.value}px ${input8.value}px ;`
+      }
+  
+        toast.classList.add('active')
       setTimeout(() => {
         toast.classList.remove('active')
       }, 3000)
   
-      input1.value = input1.value || 0;
-      input2.value = input2.value || 0;
-      input3.value = input3.value || 0;
-      input4.value = input4.value || 0;
-  
-      const copyText = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px ;`
-      
       navigator.clipboard.writeText(copyText)
         .then(() => {
           console.log("Copiado:", copyText);
@@ -74,8 +82,18 @@ document.addEventListener("DOMContentLoaded", () => {
           console.error("Erro ao copiar:", err);
         });
     })
+  
+    select.addEventListener("change", () => {
+      if (parseInt(select.value) === 8) {
+        visibilidadeDosUltimoInputs(arrayInput, "block")
+      } else {
+        visibilidadeDosUltimoInputs(arrayInput, "none")
+      }
+    })
   })
   
-  function temPropriedade(elemento, propriedade, valor) {
-    return elemento[propriedade] === valor
+  function visibilidadeDosUltimoInputs(array, visibilidade) {
+    for (let contador = 4; contador <= array.length - 1; contador++) {
+      array[contador].style.display = visibilidade
+    }
   }
