@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Border Radius</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
 </head>
 
 <body>
     <section class="container">
+        <button type="button" id="btnCopy"><i class="fa-solid fa-copy"></i></button>
+
+        <div id="toast">copiado <i class="fa-solid fa-check"></i></div>
+
         <div class="box"></div>
         <section class="inputs">
             <input type="number" placeholder="0px" id="input1">
@@ -17,7 +22,7 @@
             <input type="number" placeholder="0px" id="input3">
             <input type="number" placeholder="0px" id="input4">
         </section>
-        <button type="button">aplicar radius</button>
+        <button type="button" id="btnAply">aplicar radius</button>
     </section>
     <script src="./script.js"></script>
 </body>

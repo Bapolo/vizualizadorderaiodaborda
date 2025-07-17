@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const box = document.querySelector(".box")
     const inputs = document.querySelectorAll("section input")
     const button = document.querySelector("button")
+    const btnCopy = document.querySelector("#btnCopy")
+    const toast = document.querySelector("#toast")
   
     const arrayInput = [...inputs]
   
@@ -47,6 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
       })
+    })
+  
+    btnCopy.addEventListener("click", () => {
+      toast.classList.add('active')
+      setTimeout(() => {
+        toast.classList.remove('active')
+      }, 3000)
     })
   })
   

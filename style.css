@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
   }
   
   .container {
@@ -15,15 +16,16 @@
     background-color: #5E936C;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+    position: relative;
   }
   
   .box {
     width: 200px;
     height: 200px;
     background-color: #E8FFD7;
-    border: 1px solid #93DA97; 
+    border: 1px solid #93DA97;
     box-shadow: rgba(45, 170, 151, 0.33) 0px 5px 15px;
-    transition: all 0.1s ease-in-out; 
+    transition: all 0.1s ease-in-out;
   }
   
   .inputs {
@@ -44,7 +46,7 @@
     font-size: 18px;
   }
   
-  button {
+  #btnAply {
     margin-top: 1em;
     padding: .8em .4em;
     color: #333;
@@ -57,8 +59,56 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
-  button:active {
+  #btnAply:active {
     transform: scale(1.01);
+  }
+  
+  #btnCopy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.6em;
+    z-index: 9999;
+    cursor: pointer;
+    border: none;
+  }
+  
+  #btnCopy:active {
+    transform: scale(1.03);
+  }
+  
+  #toast {
+    background-color: #E8FFD7;
+    border: 1px solid #93DA97;
+    padding: .5em 1em;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 999999999;
+    display: none;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.1);
+    transition: all .2s ease-in-out;
+  }
+  
+  #toast.active {
+    display: block;
+    opacity: 1;
+    transition: all .2s ease-in-out;
+    animation: aparecerToast 3s;
+  }
+  
+  @keyframes aparecerToast {
+    0% {
+      opacity: 0;
+      right: 0;
+    }
+  
+    100% {
+      opacity: 1;
+      right: 40%;
+    }
   }
   
   @media (max-width: 666px) {
