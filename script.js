@@ -51,8 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             text = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px / ${input5.value}px ${input6.value}px ${input7.value}px ${input8.value}px ;`
         }
 
-        copiarTexto(text)
-        mostrarToast(toast)
+        copiarTexto(text) && mostrarToast(toast)        
     })
 
     select.addEventListener("change", () => {
