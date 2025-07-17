@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     btnCopy.addEventListener("click", () => {
-        let text
+        let text = ""
 
         if (select.value === "4") {
             const [input1, input2, input3, input4] = arrayInput
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         mostrarToast(toast)
-
         copyText(text)
     })
 
