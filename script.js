@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     arrayInput.forEach(input => {
       input.addEventListener("input", (event) => {
-        let configBorderRadius = event.target.value !== "e" ? event.target.value : "0"
   
         const valorDosInputs = arrayInput.map(input => input.value || 0)
   
@@ -85,9 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
     select.addEventListener("change", () => {
       if (parseInt(select.value) !== 8) {
-        visibilidadeDosUltimoInputs(arrayInput, "none")
-      } else {
         visibilidadeDosUltimoInputs(arrayInput, "block")
+      } else {
+        visibilidadeDosUltimoInputs(arrayInput, "none")
       }
     })
   })
