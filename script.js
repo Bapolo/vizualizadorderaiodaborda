@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     btnCopy.addEventListener("click", () => {
-        let copyText
+        let text
 
         if (select.value === "4") {
             const [input1, input2, input3, input4] = arrayInput
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
             input3.value = input3.value || 0;
             input4.value = input4.value || 0;
 
-            copyText = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px ;`
+            text = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px ;`
         } else {
             const [input1, input2, input3, input4, input5, input6, input7, input8] = arrayInput
 
@@ -48,12 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
             input7.value = input7.value || 0;
             input8.value = input8.value || 0;
 
-            copyText = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px / ${input5.value}px ${input6.value}px ${input7.value}px ${input8.value}px ;`
+            text = `border-radius: ${input1.value}px ${input2.value}px ${input3.value}px ${input4.value}px / ${input5.value}px ${input6.value}px ${input7.value}px ${input8.value}px ;`
         }
 
         mostrarToast(toast)
 
-        copyText(copyText)
+        copyText(text)
     })
 
     select.addEventListener("change", () => {
